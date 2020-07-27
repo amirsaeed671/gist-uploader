@@ -18,6 +18,9 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
                 filename: '[name].bundle.js',
                 path: path.join(__dirname, 'dist')
             },
+            resolve: {
+                modules: ['node_modules', 'test', path.join(__dirname, 'src')],
+            },
             module: {
                 rules: [
                     {
@@ -66,7 +69,7 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
                     filename: 'index.html'
                 }),
                 new DotenvWebpackPlugin(),
-                new EnvironmentPlugin(['CLIENT_ID', 'SECRET']),
+                new EnvironmentPlugin(['CLIENT_ID', 'CLIENT_SECRET']),
             ]
         },
         modeConfig(mode),
