@@ -10,7 +10,7 @@ function App() {
   //         url: 'https://api.github.com/gists',
   //         method: 'POST',
   //         headers: {
-  //             'Authorization': `token 125f3b4369ae33e33354b970f9b4b2e712a7e699`
+  //             'Authorization': `token ${token}`
   //         },
   //         data: {
   //                 "description": "Hello World Examples",
