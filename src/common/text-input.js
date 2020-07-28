@@ -2,7 +2,7 @@ import React, { forwardRef } from "react";
 import Proptypes from "prop-types";
 
 const TextInput = forwardRef(
-  ({ placeholder, required, value, onChange, label, id }, ref) => {
+  ({ placeholder, required, value, onChange, label, id, className }, ref) => {
     return (
       <label
         className="block text-gray-700 text-sm font-bold mb-2"
@@ -10,7 +10,7 @@ const TextInput = forwardRef(
       >
         {label}
         <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+          className={`${className} shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
           ref={ref}
           id={id}
           type="text"
@@ -31,6 +31,7 @@ TextInput.propTypes = {
   required: Proptypes.bool,
   label: Proptypes.string,
   id: Proptypes.string,
+  className: Proptypes.string,
 };
 
 TextInput.defaultProps = {
@@ -38,6 +39,7 @@ TextInput.defaultProps = {
   required: false,
   label: "",
   id: "",
+  className: "",
 };
 
 export default TextInput;

@@ -2,6 +2,8 @@ import React, { useRef, useEffect } from "react";
 import Proptypes from "prop-types";
 import useForm from "custom-hooks/useForm";
 import TextInput from "common/text-input";
+import FormHeader from "common/form-header";
+import Checkbox from "common/checkbox";
 
 function Form({ onSubmit, loader }) {
   const [
@@ -30,13 +32,12 @@ function Form({ onSubmit, loader }) {
         onSubmit={handleSubmit}
         className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
       >
-        <div className="mb-4 -mt-2">
-          <h1 className="text-3xl">Create a Gist</h1>
-        </div>
+        <FormHeader title="Create a Gist" />
         <div className="mb-4">
           <TextInput
             ref={initRef}
             value={description}
+            className="mb-3"
             required
             label="Description"
             id="description"
@@ -46,36 +47,24 @@ function Form({ onSubmit, loader }) {
         </div>
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="md:w-1/2 px-3 mb-6 md:mb-0 w-full">
-            <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="filename"
-            >
-              Filename
-              <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="filename"
-                value={ext}
-                required
-                onChange={(e) => setFormValue({ ext: e.target.value })}
-                type="text"
-                placeholder="e.g keymap.bson, config.json"
-              />
-            </label>
+            <TextInput
+              id="filename"
+              label="Filename"
+              value={ext}
+              required
+              onChange={(e) => setFormValue({ ext: e.target.value })}
+              type="text"
+              placeholder="e.g keymap.bson, config.json"
+            />
           </div>
           <div className="md:w-1/2 px-3 mb-6 md:mb-0 flex items-end w-full">
-            <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="isPublic"
-            >
-              <input
-                className="mr-1"
-                id="isPublic"
-                onChange={(e) => setFormValue({ isPublic: e.target.checked })}
-                type="checkbox"
-                checked={isPublic}
-              />
-              Public
-            </label>
+            <Checkbox
+              id="isPublic"
+              onChange={(e) => setFormValue({ isPublic: e.target.checked })}
+              label="Public"
+              type="checkbox"
+              checked={isPublic}
+            />
           </div>
         </div>
         <div className="mb-6">
