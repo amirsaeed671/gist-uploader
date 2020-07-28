@@ -23,7 +23,10 @@
     "@babel/plugin-transform-runtime": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
+    "@testing-library/jest-dom": "^5.11.1",
+    "@testing-library/react": "^10.4.7",
     "autoprefixer": "^9.8.5",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.6.0",
     "dotenv-webpack": "^2.0.0",
@@ -41,6 +44,8 @@
     "html-webpack-plugin": "^4.3.0",
     "husky": "^4.2.5",
     "jest": "^26.1.0",
+    "jest-axe": "^3.5.0",
+    "jest-runner-eslint": "^0.10.0",
     "jest-watch-select-projects": "^2.0.0",
     "lint-staged": "^10.2.11",
     "postcss-loader": "^3.0.0",
@@ -63,5 +68,25 @@
     "rxjs": "^6.6.0",
     "serve": "^11.3.2",
     "tailwindcss": "^1.5.2"
+  },
+  "engines": {
+    "node": "13.10.1",
+    "yarn": "1.22.4"
+  },
+  "jest-runner-eslint": {
+    "cliOptions": {
+      "ignorePath": "./.gitignore"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "yarn run format",
+      "jest --findRelatedTests"
+    ]
   }
 }
