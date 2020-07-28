@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import Proptypes from "prop-types";
 import useForm from "custom-hooks/useForm";
+import TextInput from "common/text-input";
 
 function Form({ onSubmit, loader }) {
   const [
@@ -33,22 +34,15 @@ function Form({ onSubmit, loader }) {
           <h1 className="text-3xl">Create a Gist</h1>
         </div>
         <div className="mb-4">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="description"
-          >
-            Description
-            <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-              id="description"
-              required
-              ref={initRef}
-              value={description}
-              onChange={(e) => setFormValue({ description: e.target.value })}
-              type="text"
-              placeholder="Enter the description for the gist"
-            />
-          </label>
+          <TextInput
+            ref={initRef}
+            value={description}
+            required
+            label="Description"
+            id="description"
+            onChange={(e) => setFormValue({ description: e.target.value })}
+            placeholder="Enter the description for the gist"
+          />
         </div>
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="md:w-1/2 px-3 mb-6 md:mb-0 w-full">
