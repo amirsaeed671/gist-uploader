@@ -1,42 +1,23 @@
-import React from "react";
-import Form from "./Form";
-// import {from} from 'rxjs'
-// import {pluck, tap} from 'rxjs/operators'
-// import axios from 'axios'
+import React, { lazy, Suspense } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Container from "common/container";
+
+const Gists = lazy(() => import("Gists"));
+const Login = lazy(() => import("Login"));
 
 function App() {
-  // useEffect(() => {
-  //     from(axios({
-  //         url: 'https://api.github.com/gists',
-  //         method: 'POST',
-  //         headers: {
-  //             'Authorization': `token ${token}`
-  //         },
-  //         data: {
-  //                 "description": "Hello World Examples",
-  //                 "public": true,
-  //                 "files": {
-  //                   "hello_world.rb": {
-  //                     "content": "class HelloWorld\n   def initialize(name)\n      @name = name.capitalize\n   end\n   def sayHi\n      puts \"Hello !\"\n   end\nend\n\nhello = HelloWorld.new(\"World\")\nhello.sayHi"
-  //                   },
-  //                   "hello_world.py": {
-  //                     "content": "class HelloWorld:\n\n    def __init__(self, name):\n        self.name = name.capitalize()\n       \n    def sayHi(self):\n        print \"Hello \" + self.name + \"!\"\n\nhello = HelloWorld(\"world\")\nhello.sayHi()"
-  //                   },
-  //                   "hello_world_ruby.txt": {
-  //                     "content": "Run `ruby hello_world.rb` to print Hello World"
-  //                   },
-  //                   "hello_world_python.txt": {
-  //                     "content": "Run `python hello_world.py` to print Hello World"
-  //                   }
-  //                 }
-  //             }
-  //     })).pipe(
-  //         tap(res => {
-  //             debugger;
-  //         })
-  //     ).subscribe()
-  // }, [])
-  return <Form />;
+  return (
+    <Container>
+      <Suspense fallback={null}>
+        <Router>
+          <Switch>
+            <Route path="/" exact component={Login} />
+            <Route path="/gists" exact component={Gists} />
+          </Switch>
+        </Router>
+      </Suspense>
+    </Container>
+  );
 }
 
 export default App;
