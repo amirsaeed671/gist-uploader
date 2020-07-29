@@ -17,6 +17,8 @@ module.exports = {
     "no-debugger": "off",
     "no-console": "off",
     "no-param-reassign": "off",
+    "no-return-assign": "off",
+    camelcase: "off",
   },
   plugins: ["prettier"],
   settings: {
