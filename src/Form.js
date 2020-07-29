@@ -4,6 +4,8 @@ import useForm from "custom-hooks/useForm";
 import TextInput from "common/text-input";
 import FormHeader from "common/form-header";
 import Checkbox from "common/checkbox";
+import TextArea from "common/text-area";
+import Button from "common/button";
 
 function Form({ onSubmit, loader }) {
   const [
@@ -68,30 +70,18 @@ function Form({ onSubmit, loader }) {
           </div>
         </div>
         <div className="mb-6">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="content"
-          >
-            Content/Code
-            <textarea
-              className="shadow h-64 resize-none appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="content"
-              required
-              value={content}
-              onChange={(e) => setFormValue({ content: e.target.value })}
-              type="text"
-              placeholder="Write you content/code here"
-            />
-          </label>
+          <TextArea
+            id="content"
+            required
+            label="Content/Code"
+            value={content}
+            onChange={(e) => setFormValue({ content: e.target.value })}
+            type="text"
+            placeholder="Write you content/code here"
+          />
         </div>
         <div className="flex items-center justify-between">
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            disabled={loader}
-            type="submit"
-          >
-            Create Gist
-          </button>
+          <Button disabled={loader} label="Create Gist" />
         </div>
       </form>
     </div>

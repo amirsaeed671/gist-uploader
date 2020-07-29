@@ -1,5 +1,4 @@
 const path = require("path");
-const { EnvironmentPlugin } = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const DotenvWebpackPlugin = require("dotenv-webpack");
 const { merge } = require("webpack-merge");
@@ -17,7 +16,9 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
           "test",
           path.join(__dirname, "src"),
           "custom-hooks",
+          "observables",
           "common",
+          "utils",
         ],
       },
       entry: {
@@ -72,7 +73,6 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
           filename: "index.html",
         }),
         new DotenvWebpackPlugin(),
-        new EnvironmentPlugin(["CLIENT_ID", "CLIENT_SECRET"]),
       ],
     },
     modeConfig(mode),
