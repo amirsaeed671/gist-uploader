@@ -7,7 +7,9 @@ module.exports = {
     "test",
     path.join(__dirname, "../src"),
     "custom-hooks",
+    "observables",
     "common",
+    "utils",
   ],
   moduleNameMapper: {
     "\\.css$": require.resolve("./style-mock.js"),

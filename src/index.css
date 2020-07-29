@@ -5,6 +5,18 @@ html, body, #root {
     padding: 0;
 }
 
+@keyframes enter {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+.in-animation {
+    animation: enter 0.5s ease-in-out;
+}
+
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";

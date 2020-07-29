@@ -16,6 +16,7 @@ module.exports = {
     "global-require": "off",
     "no-debugger": "off",
     "no-console": "off",
+    "no-param-reassign": "off",
   },
   plugins: ["prettier"],
   settings: {

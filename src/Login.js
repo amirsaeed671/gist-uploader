@@ -1,9 +1,14 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, lazy } from "react";
 import githubIcon from "assets/GitHub-Mark-32px.png";
 import { useHistory } from "react-router-dom";
+import api from "utils/api";
+
+const Modal = lazy(() => import("common/modal"));
+const Popup = lazy(() => import("common/popup"));
 
 function Login() {
   const [token, setToken] = useState("");
+  const [error, setError] = useState(false);
   const history = useHistory();
   const inputRef = useRef(null);
 
@@ -11,14 +16,27 @@ function Login() {
     inputRef.current.focus();
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    localStorage.setItem("token", token);
-    history.push("/gists");
+    try {
+      localStorage.setItem("token", token);
+      await api.get("user");
+      history.push("/gists");
+    } catch {
+      setError(true);
+      setTimeout(() => {
+        setError(false);
+      }, 2000);
+    }
   };
 
   return (
     <div className="w-full">
+      {error && (
+        <Modal>
+          <Popup />
+        </Modal>
+      )}
       <form
         onSubmit={handleSubmit}
         className="flex flex-col h-screen justify-center items-center"
