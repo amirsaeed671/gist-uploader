@@ -10,7 +10,7 @@ Following are some steps to generate your access token.
 1. Under Github > Settings Click on **Developer Settings**.
 2. Now, Click on **Personal access tokens**.
 3. Click on **Generate a new token** button.
-4. Now you can there are multiple scopes available for the token.
+4. Now you can see there are multiple scopes available for the token.
 5. Now check on **gist**.
 6. Click on **Generate token**.
 
