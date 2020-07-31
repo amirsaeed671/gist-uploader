@@ -6,7 +6,7 @@ function useFetch() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
+  const fetchData = () => {
     const observer = {
       next: (gists) => {
         setData(gists);
@@ -21,9 +21,13 @@ function useFetch() {
       },
     };
     fetchGists().subscribe(observer);
+  };
+
+  useEffect(() => {
+    fetchData();
   }, []);
 
-  return [data, loading, error];
+  return [data, loading, error, fetchData];
 }
 
 export default useFetch;

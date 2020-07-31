@@ -1,24 +1,16 @@
-import axios from "axios";
+import api from "utils/api";
 import { from } from "rxjs";
 import { catchError } from "rxjs/operators";
 
 function postGist({ ext, content, description, isPublic }) {
-  return from(
-    axios({
-      url: "https://api.github.com/gists",
-      method: "POST",
-      headers: {
-        Authorization: `token ${localStorage.getItem("token")}`,
-      },
-      data: {
-        description,
-        public: isPublic,
-        files: {
-          [ext]: { content },
-        },
-      },
-    })
-  ).pipe(
+  const data = {
+    description,
+    public: isPublic,
+    files: {
+      [ext]: { content },
+    },
+  };
+  return from(api.post("gists", data)).pipe(
     catchError((err) => {
       throw err;
     })

@@ -7,7 +7,7 @@ import Form from "./Form";
 
 function Gists() {
   // eslint-disable-next-line no-unused-vars
-  const [data, loading, error] = useFetch();
+  const [data, loading, error, refetch] = useFetch();
   const [loader, setLoader] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(true);
   const handleSubmit = (formData) => {
@@ -18,6 +18,9 @@ function Gists() {
       },
       error: () => {
         setLoader(false);
+      },
+      complete: () => {
+        refetch();
       },
     };
     postGist(formData).subscribe(observer);
@@ -34,7 +37,7 @@ function Gists() {
   return (
     <div>
       <Form onSubmit={handleSubmit} loader={loader} />
-      <Gallery />
+      <Gallery data={data} />
     </div>
   );
 }
