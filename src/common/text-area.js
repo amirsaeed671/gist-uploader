@@ -19,7 +19,7 @@ function TextArea({ label, id, value, onChange, placeholder, required }) {
 
 TextArea.propTypes = {
   value: Proptypes.string.isRequired,
-  onChange: Proptypes.string.isRequired,
+  onChange: Proptypes.func.isRequired,
   id: Proptypes.string,
   label: Proptypes.string,
   placeholder: Proptypes.string,
