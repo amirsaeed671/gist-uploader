@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import postGist from "observables/form";
 import { Redirect } from "react-router-dom";
 import useFetch from "custom-hooks/useFetch";
-import GistList from "common/gist-iframe";
+import Gallery from "common/gallery";
 import Form from "./Form";
 
 function Gists() {
@@ -34,7 +34,7 @@ function Gists() {
   return (
     <div>
       <Form onSubmit={handleSubmit} loader={loader} />
-      <GistList data={data} />
+      <Gallery />
     </div>
   );
 }
