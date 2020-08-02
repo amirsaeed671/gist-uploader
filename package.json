@@ -16,6 +16,7 @@
     "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
     "lint": "jest --config test/jest.lint.js",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "docs": "jsdoc -c jsdoc.json",
     "heroku-postbuild": "yarn run prod"
   },
   "devDependencies": {
@@ -47,6 +48,7 @@
     "jest-axe": "^3.5.0",
     "jest-runner-eslint": "^0.10.0",
     "jest-watch-select-projects": "^2.0.0",
+    "jsdoc": "^3.6.5",
     "lint-staged": "^10.2.11",
     "postcss-loader": "^3.0.0",
     "prettier": "^2.0.5",
@@ -59,6 +61,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "better-docs": "^2.3.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-prettier": "^3.1.4",
     "prop-types": "^15.7.2",
