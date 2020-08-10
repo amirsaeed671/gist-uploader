@@ -2,6 +2,8 @@
 
 A quick way to upload your Gists (Public/Private).
 
+---
+
 > In order to use this , first you need to generate a access token of your github account
 > with at least permission for creating a gist.
 
