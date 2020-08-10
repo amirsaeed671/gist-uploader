@@ -1,6 +1,18 @@
 import React from "react";
 import Proptypes from "prop-types";
 
+/**
+ * Component for the custom text-area
+ *
+ * @function TextArea
+ * @param {string} [id=''] id of the textarea element.
+ * @param {string} [label='']  textarea label (Optional).
+ * @param {string} [placeholder='']  placeholder for the field (Optional).
+ * @param {boolean} [required=false]  text area field required or not. default to false.
+ * @param {string} value  text area value
+ * @param {function} onChange  callback which fires on textarea change.
+ * @return {ReactElement}  Customized Textarea component.
+ */
 function TextArea({ label, id, value, onChange, placeholder, required }) {
   return (
     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor={id}>

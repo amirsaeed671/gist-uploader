@@ -7,7 +7,7 @@ import Notification from "context-reducers/context";
  *
  * @function Icon
  * @param {boolean} success  Notification status.
- * @returns {SVGElement} Svg based on notification status.
+ * @return {SVGElement} Svg based on notification status.
  */
 function Icon({ success }) {
   return success ? (
@@ -38,7 +38,7 @@ Icon.propTypes = {
  * Popup Component for showing notifications.
  *
  * @function Popup
- * @returns {ReactElement} returns the notificaiton bar component.
+ * @return {ReactElement} notificaiton bar component.
  */
 
 function Popup() {
