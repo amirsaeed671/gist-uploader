@@ -1,14 +1,13 @@
-import React, { useState, useRef, useEffect, lazy } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
+import Notification from "context-reducers/context";
 import githubIcon from "assets/GitHub-Mark-32px.png";
 import { useHistory } from "react-router-dom";
 import api from "utils/api";
-
-const Modal = lazy(() => import("common/modal"));
-const Popup = lazy(() => import("common/popup"));
+import notify from "utils/notify";
 
 function Login() {
   const [token, setToken] = useState("");
-  const [error, setError] = useState(false);
+  const { dispatch } = useContext(Notification);
   const history = useHistory();
   const inputRef = useRef(null);
 
@@ -22,21 +21,22 @@ function Login() {
       localStorage.setItem("token", token);
       await api.get("user");
       history.push("/gists");
+      notify(dispatch, {
+        success: true,
+        primary: "Successfuly Logged in!",
+        secondary: "Welcome to Gist Uploader!",
+      });
     } catch {
-      setError(true);
-      setTimeout(() => {
-        setError(false);
-      }, 2000);
+      notify(dispatch, {
+        success: false,
+        primary: "Access token is incorrect! (Unauthorized)",
+        secondary: " Make sure you've entered the correct access token.",
+      });
     }
   };
 
   return (
     <div className="w-full">
-      {error && (
-        <Modal>
-          <Popup />
-        </Modal>
-      )}
       <form
         onSubmit={handleSubmit}
         className="flex flex-col h-screen justify-center items-center"
