@@ -20,6 +20,27 @@ Following are some steps to generate your access token.
 
 Here's the link for the code documentation if you are interested. https://amirsaeed671.github.io/gist-uploader/
 
+## Contributors
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/amirsaeed671">
+        <img src="https://github.com/amirsaeed671.png" width="100px;" alt="Amir Ali"/>
+        <br />
+        <sub>
+          <b>Amir Ali</b>
+        </sub>
+      </a>
+      <br />
+      <a href="https://github.com/iamfotx/middleware-adapter/commits?author=amirsaeed671" title="Code">💻</a>
+      <a href="https://github.com/iamfotx/middleware-adapter/commits?author=amirsaeed671" title="Documentation">📖</a> 
+      <a href="https://github.com/iamfotx/middleware-adapter/commits?author=amirsaeed671" title="Tests">⚠️</a>
+    </td>
+  </tr>
+</table>
+
+
 ## License
 
 MIT
