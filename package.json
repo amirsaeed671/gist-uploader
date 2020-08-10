@@ -82,11 +82,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn run docs && lint-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": [
+      "yarn run docs",
       "yarn run format",
       "jest --findRelatedTests"
     ]
