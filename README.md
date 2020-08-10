@@ -18,11 +18,12 @@ Following are some steps to generate your access token.
 
 >Now goto [https://gist-uploader.herokuapp.com/](https://gist-uploader.herokuapp.com/ "https://gist-uploader.herokuapp.com/") , and paste your access token and click on login button, after that you will be able to see a form, you can write down info to create gists (Public/Private) in your account quickly.
 
-## 📖Docs
+## 📖 Docs
 
 Here's the link for the code documentation if you are interested. https://amirsaeed671.github.io/gist-uploader/
 
-## ✨Contributors
+
+## ✨ Contributors
 
 <table>
   <tr>
@@ -43,6 +44,6 @@ Here's the link for the code documentation if you are interested. https://amirsa
 </table>
 
 
-## 🔖License
+## 🔖 License
 
 MIT
