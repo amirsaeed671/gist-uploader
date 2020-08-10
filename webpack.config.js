@@ -70,6 +70,7 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
       },
       plugins: [
         new HtmlWebpackPlugin({
+          favicon: "./public/favicon.ico",
           template: path.resolve(__dirname, "public/index.html"),
           filename: "index.html",
         }),
