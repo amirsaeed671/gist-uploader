@@ -16,7 +16,7 @@
     "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
     "lint": "jest --config test/jest.lint.js",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
-    "docs": "jsdoc -c jsdoc.json",
+    "docs": "rm -rf ./docs && jsdoc -c jsdoc.json",
     "heroku-postbuild": "yarn run prod"
   },
   "devDependencies": {
@@ -82,7 +82,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "yarn run docs && lint-staged"
     }
   },
   "lint-staged": {
