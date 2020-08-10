@@ -19,3 +19,7 @@ Following are some steps to generate your access token.
 ## Docs
 
 Here's the link for the code documentation if you are interested. https://amirsaeed671.github.io/gist-uploader/
+
+## License
+
+MIT
