@@ -35,9 +35,9 @@ Here's the link for the code documentation if you are interested. https://amirsa
         </sub>
       </a>
       <br />
-      <a href="https://github.com/iamfotx/middleware-adapter/commits?author=amirsaeed671" title="Code">💻</a>
-      <a href="https://github.com/iamfotx/middleware-adapter/commits?author=amirsaeed671" title="Documentation">📖</a> 
-      <a href="https://github.com/iamfotx/middleware-adapter/commits?author=amirsaeed671" title="Tests">⚠️</a>
+      <a href="https://github.com/amirsaeed671/gist-uploader/commits?author=amirsaeed671" title="Code">💻</a>
+      <a href="https://github.com/amirsaeed671/gist-uploader/commits?author=amirsaeed671" title="Documentation">📖</a> 
+      <a href="https://github.com/amirsaeed671/gist-uploader/commits?author=amirsaeed671" title="Tests">⚠️</a>
     </td>
   </tr>
 </table>
