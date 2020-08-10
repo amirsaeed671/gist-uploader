@@ -2,6 +2,13 @@ import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import Notification from "context-reducers/context";
 
+/**
+ * Component for getting svg based on prop.
+ *
+ * @function Icon
+ * @param {boolean} success  Notification status.
+ * @returns {SVGElement} Svg based on notification status.
+ */
 function Icon({ success }) {
   return success ? (
     <svg
@@ -26,6 +33,13 @@ function Icon({ success }) {
 Icon.propTypes = {
   success: PropTypes.bool.isRequired,
 };
+
+/**
+ * Popup Component for showing notifications.
+ *
+ * @function Popup
+ * @returns {ReactElement} returns the notificaiton bar component.
+ */
 
 function Popup() {
   const { state } = useContext(Notification);
