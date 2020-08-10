@@ -10,6 +10,7 @@ module.exports = {
     "observables",
     "common",
     "utils",
+    "context-reducers",
   ],
   moduleNameMapper: {
     "\\.css$": require.resolve("./style-mock.js"),

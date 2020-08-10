@@ -19,6 +19,7 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
           "observables",
           "common",
           "utils",
+          "context-reducers",
         ],
       },
       entry: {
